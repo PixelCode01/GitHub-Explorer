@@ -136,4 +136,26 @@
 
             output += "<p>Blog: <a href='" + user.blog + "' target='_blank'>" + user.blog + "</a></p>";
 
-            
+            output += "<p>Bio: " + user.bio + "</p>";
+
+            output += "<p>Company: " + user.company + "</p>";
+
+            output += "<p>Website: <a href='" + user.html_url + "' target='_blank'>" + user.html_url + "</a></p>";
+
+            output += "<p>Created at: " + user.created_at + "</p>";
+
+            document.getElementById("output").innerHTML = output;
+
+          }
+
+        };
+
+        xhr.send();
+
+      }
+
+    </script>
+
+  </body>
+
+</html>
