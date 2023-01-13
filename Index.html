@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <title>GitHub User Lookup</title>
+
+    <style>
+
+      body {
+
+        font-family: Arial, sans-serif;
+
+        text-align: center;
+
+      }
+
+      form {
+
+        margin: 0 auto;
+
+        width: 400px;
+
+      }
+
+      input[type="text"] {
+
+        width: 100%;
+
+        padding: 12px 20px;
+
+        margin: 8px 0;
+
+        box-sizing: border-box;
+
+        border: 2px solid #ccc;
+
+        border-radius: 4px;
+
+      }
+
+      button[type="submit"] {
+
+        width: 100%;
+
+        background-color: #4CAF50;
+
+        color: white;
+
+        padding: 14px 20px;
+
+        margin: 8px 0;
+
+        border: none;
+
+        border-radius: 4px;
+
+        cursor: pointer;
+
+      }
+
+      button[type="submit"]:hover {
+
+        background-color: #45a049;
+
+      }
+
+      #output {
+
+        width: 400px;
+
+        margin: 0 auto;
+
+        text-align: left;
+
+      }
+
+      #output p {
+
+        margin: 8px 0;
+
+      }
+
+    </style>
+
+  </head>
+
+  <body>
+
+    <h1>GitHub User Lookup</h1>
+
+    <form>
+
+      <label for="username">Enter a GitHub username:</label>
+
+      <input type="text" id="username" name="username">
+
+      <button type="submit" onclick="getUserDetails()">Lookup</button>
+
+    </form>
+
+    <div id="output"></div>
+
+    <script>
+
+      function getUserDetails() {
+
+        var username = document.getElementById("username").value;
+
+        var xhr = new XMLHttpRequest();
+
+        xhr.open("GET", "https://api.github.com/users/" + username, true);
+
+        xhr.onreadystatechange = function() {
+
+          if (xhr.readyState === 4 && xhr.status === 200) {
+
+            var user = JSON.parse(xhr.responseText);
+
+            var output = "";
+
+            output += "<h2>User Details</h2>";
+
+            output += "<p>Username: " + user.login + "</p>";
+
+            output += "<p>Name: " + user.name + "</p>";
+
+            output += "<p>Location: " + user.location + "</p>";
+
+            output += "<p>Email: " + user.email + "</p>";
+
+            output += "<p>Followers: " + user.followers + "</p>";
+
+            output += "<p>Repositories: <a href='" + user.repos_url + "' target='_blank'>" + user.repos_url + "</a></p>";
+
+            output += "<p>Blog: <a href='" + user.blog + "' target='_blank'>" + user.blog + "</a></p>";
+
+            output += "<p>Bio: " + user.bio + "</
+
