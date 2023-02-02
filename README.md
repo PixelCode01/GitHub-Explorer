@@ -15,7 +15,7 @@ Bio
 Company
 Website
 Account creation date
-Users can see the repositories and website by clicking on the respective links
+Users can see the repositories and website by clicking on the respective links.
 # Requirements
 A web browser
 Internet connection
