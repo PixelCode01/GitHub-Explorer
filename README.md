@@ -20,7 +20,7 @@ Users can see the repositories and website by clicking on the respective links.
 A web browser
 Internet connection
 # Usage
-Open the https://abcd299wp.github.io/GitHub-Explorer/ in a web browser
+Open the https://anantmishra01.github.io/GitHub-Explorer/ in a web browser
 Enter a GitHub username in the input field
 Click on the "Lookup" button
 The user's information will be displayed on the page
